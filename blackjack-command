@@ -102,7 +102,7 @@ $let[c50;$arrayGet[$random[1;3]]]
 $arrayRemove[$random[1;3]]
 $let[c51;$arrayGet[$random[1;2]]]
 $arrayRemove[$random[1;2]]
-$let[c51;$arrayGet[1]]
+$let[c52;$arrayGet[1]]
 $setUserVar[shufldeck;$get[c1] $get[c2] $get[c3] $get[c4] $get[c5] $get[c6] $get[c7] $get[c8] $get[c9] $get[c10] $get[c11] $get[c12] $get[c13] $get[c14] $get[c15] $get[c16] $get[c18] $get[c19] $get[c20] $get[c21] $get[c22] $get[c23] $get[c24] $get[c25] $get[c26] $get[c27] $get[c28] $get[c29] $get[c30] $get[c31] $get[c32] $get[c33] $get[c34] $get[c35] $get[c36] $get[c37] $get[c38] $get[c39] $get[c40] $get[c41] $get[c42] $get[c43] $get[c44] $get[c45] $get[c46] $get[c47] $get[c48] $get[c49] $get[c50] $get[c51] $get[c52]]
 $sendMessage[$getServerVar[unshuffled_deck]
 ^^^ The above is the unshuffled deck.
