@@ -1,3 +1,5 @@
+$onlyIf[$isNumber[$message[2]]==true;Please provide a wager like this !bj `100`]
+$onlyIf[$sum[-$message[2];$getUserVar[curbal]]>-1;You dont seem to have enough cave coins for this wager, sorry! Check your balance with !pouch]
 $initVar[server;unshuffled_deck;1h#SEMI#2h#SEMI#3h#SEMI#4h#SEMI#5h#SEMI#6h#SEMI#7h#SEMI#8h#SEMI#9h#SEMI#10h#SEMI#11h#SEMI#12h#SEMI#13h#SEMI#1s#SEMI#2s#SEMI#3s#SEMI#4s#SEMI#5s#SEMI#6s#SEMI#7s#SEMI#8s#SEMI#9s#SEMI#10s#SEMI#11s#SEMI#12s#SEMI#13s#SEMI#1c#SEMI#2c#SEMI#3c#SEMI#4c#SEMI#5c#SEMI#6c#SEMI#7c#SEMI#8c#SEMI#9c#SEMI#10c#SEMI#11c#SEMI#12c#SEMI#13c#SEMI#1d#SEMI#2d#SEMI#3d#SEMI#4d#SEMI#5d#SEMI#6d#SEMI#7d#SEMI#8d#SEMI#9d#SEMI#10d#SEMI#11d#SEMI#12d#SEMI#13d]
 $textSplit[$getServerVar[unshuffled_deck];#SEMI#]
 $let[c1;$arrayGet[$random[1;52]]]
@@ -104,12 +106,120 @@ $let[c51;$arrayGet[$random[1;2]]]
 $arrayRemove[$random[1;2]]
 $let[c52;$arrayGet[1]]
 $setUserVar[shufldeck;$get[c1] $get[c2] $get[c3] $get[c4] $get[c5] $get[c6] $get[c7] $get[c8] $get[c9] $get[c10] $get[c11] $get[c12] $get[c13] $get[c14] $get[c15] $get[c16] $get[c18] $get[c19] $get[c20] $get[c21] $get[c22] $get[c23] $get[c24] $get[c25] $get[c26] $get[c27] $get[c28] $get[c29] $get[c30] $get[c31] $get[c32] $get[c33] $get[c34] $get[c35] $get[c36] $get[c37] $get[c38] $get[c39] $get[c40] $get[c41] $get[c42] $get[c43] $get[c44] $get[c45] $get[c46] $get[c47] $get[c48] $get[c49] $get[c50] $get[c51] $get[c52]]
-$sendMessage[$getServerVar[unshuffled_deck]
-^^^ The above is the unshuffled deck.
-
-$getUserVar[shufldeck]
-^^^ The above is the shuffled deck]
-
+$objectCreate[
+{
+"1c":"Ace of Clubs",
+"2c":"2 of Clubs",
+"3c":"3 of Clubs",
+"4c":"4 of Clubs",
+"5c":"5 of Clubs",
+"6c":"6 of Clubs",
+"7c":"7 of Clubs",
+"8c":"8 of Clubs",
+"9c":"9 of Clubs",
+"10c":"10 of Clubs",
+"11c":"Jack of Clubs",
+"12c":"Queen of Clubs",
+"13c":"King of Clubs",
+"1d":"Ace of Diamonds",
+"2d":"2 of Diamonds",
+"3d":"3 of Diamonds",
+"4d":"4 of Diamonds",
+"5d":"5 of Diamonds",
+"6d":"6 of Diamonds",
+"7d":"7 of Diamonds",
+"8d":"8 of Diamonds",
+"9d":"9 of Diamonds",
+"10d":"10 of Diamonds",
+"11d":"Jack of Diamonds",
+"12d":"Queen of Diamonds",
+"13d":"King of Diamonds",
+"1s":"Ace of Spades",
+"2s":"2 of Spades",
+"3s":"3 of Spades",
+"4s":"4 of Spades",
+"5s":"5 of Spades",
+"6s":"6 of Spades",
+"7s":"7 of Spades",
+"8s":"8 of Spades",
+"9s":"9 of Spades",
+"10s":"10 of Spades",
+"11s":"Jack of Spades",
+"12s":"Queen of Spades",
+"13s":"King of Spades",
+"1h":"Ace of Hearts",
+"2h":"2 of Hearts",
+"3h":"3 of Hearts",
+"4h":"4 of Hearts",
+"5h":"5 of Hearts",
+"6h":"6 of Hearts",
+"7h":"7 of Hearts",
+"8h":"8 of Hearts",
+"9h":"9 of Hearts",
+"10h":"10 of Hearts",
+"11h":"Jack of Hearts",
+"12h":"Queen of Hearts",
+"13h":"King of Hearts",
+"Ace of Clubs":"1",
+"2 of Clubs":"2",
+"3 of Clubs":"3",
+"4 of Clubs":"4",
+"5 of Clubs":"5",
+"6 of Clubs":"6",
+"7 of Clubs":"7",
+"8 of Clubs":"8",
+"9 of Clubs":"9",
+"10 of Clubs":"10",
+"Jack of Clubs":"10",
+"Queen of Clubs":"10",
+"King of Clubs":"10",
+"Ace of Diamonds":"1",
+"2 of Diamonds":"2",
+"3 of Diamonds":"3",
+"4 of Diamonds":"4",
+"5 of Diamonds":"5",
+"6 of Diamonds":"6",
+"7 of Diamonds":"7",
+"8 of Diamonds":"8",
+"9 of Diamonds":"9",
+"10 of Diamonds":"10",
+"Jack of Diamonds":"10",
+"Queen of Diamonds":"10",
+"King of Diamonds":"10",
+"Ace of Spades":"1",
+"2 of Spades":"2",
+"3 of Spades":"3",
+"4 of Spades":"4",
+"5 of Spades":"5",
+"6 of Spades":"6",
+"7 of Spades":"7",
+"8 of Spades":"8",
+"9 of Spades":"9",
+"10 of Spades":"10",
+"Jack of Spades":"10",
+"Queen of Spades":"10",
+"King of Spades":"10",
+"Ace of Hearts":"1",
+"2 of Hearts":"2",
+"3 of Hearts":"3",
+"4 of Hearts":"4",
+"5 of Hearts":"5",
+"6 of Hearts":"6",
+"7 of Hearts":"7",
+"8 of Hearts":"8",
+"9 of Hearts":"9",
+"10 of Hearts":"10",
+"Jack of Hearts":"10",
+"Queen of Hearts":"10",
+"King of Hearts":"10
+}
+]
+$sendMessage[You wager :coin: $message[2] cave coins and the dealer deals you: $objectGet[$get[c1]] and deals emself: $objectGet[$get[c2]].]
+$wait[4s]
+$sendMessage[Next, the dealer deals you: $objectGet[$get[c3]] and deals emself: a card face down.]
+$let[b1c;$awaitButton[Will you hit or stay?{button:Hit:GREEN::hit}{button:Stay:BLUE::stay};;60s;hit;stay]]
+$if[$get[b1c]==stay]
+    $sendMessage[The dealer flips over eir card and reveals: $objectGet[$get[c4]]
 
 
 
