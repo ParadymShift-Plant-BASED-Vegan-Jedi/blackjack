@@ -211,15 +211,54 @@ $objectCreate[
 "10 of Hearts":"10",
 "Jack of Hearts":"10",
 "Queen of Hearts":"10",
-"King of Hearts":"10
+"King of Hearts":"10"
 }
 ]
 $sendMessage[You wager :coin: $message[2] cave coins and the dealer deals you: $objectGet[$get[c1]] and deals emself: $objectGet[$get[c2]].]
 $wait[4s]
 $sendMessage[Next, the dealer deals you: $objectGet[$get[c3]] and deals emself: a card face down.]
+$if[$objectGet[$objectGet[$get[c1]]]==1||$objectGet[$objectGet[$get[c3]]]==1] /* ACE detected, possible natural */
+    $if[$objectGet[$objectGet[$get[c1]]]==10||$objectGet[$objectGet[$get[c3]]]==10]
+        /* natural confirmed */
+        $sendMessage[The dealer flips over eir face down card and reveals: $objectGet[$get[c4]]
+        $if[$objectGet[$objectGet[$get[c2]]]==1||$objectGet[$objectGet[$get[c4]]]==1]
+            $if[$objectGet[$objectGet[$get[c2]]]==10||$objectGet[$objectGet[$get[c4]]]==10]
+                $stop[You break even. Thanks for playing!]
+                $else
+                $let[winnings;$multi[$message[2];1.5]]
+                $setUserVar[curbal;$sum[$getUserVar[curbal];$get[winnings]]]
+                $stop[Congratulations! You won your original bet back with a natural for a 1.5x bonus :). Play again to win some more!]
+            $endIf
+        $endIf
+    $endIf
+$endIf
+$if[$objectGet[$objectGet[$get[c1]]]==$objectGet[$objectGet[$get[c3]]]]
+$let[b1c;$awaitButton[Will you hit, split, or stay?{button:Hit:GREEN::hit}{button:Split:RED::split}{button:Stay:BLUE::stay};;60s;hit;split;stay]]
+
 $let[b1c;$awaitButton[Will you hit or stay?{button:Hit:GREEN::hit}{button:Stay:BLUE::stay};;60s;hit;stay]]
 $if[$get[b1c]==stay]
-    $sendMessage[The dealer flips over eir card and reveals: $objectGet[$get[c4]]
+    $sendMessage[The dealer flips over eir face down card and reveals: $objectGet[$get[c4]]
+    $if[$getObject[$getObject[$get[c2]]]==1&&$getObject[$getObject[$get[c4]]]==1]
+        $let[dealval;12]
+        $wait[2s]
+        $sendMessage[The dealer hits emself and draws: $getObject[$get[c5]]]
+        $if[$objectGet[$objectGet[$get[c5]]]==1]
+            $let[dealval;13]
+            $wait[2s]
+            $sendMessage[The dealer hits emself and draws: $getObject[$get[c6]]]
+            $if[$objectGet[$objectGet[$get[c6]]]==1]
+                $let[dealval;14]
+                $wait[2s]
+                $sendMessage[The dealer hits emself and draws: $getObject[$get[c7]]]
+                $let[dealval;$sum[$get[dealval];$getObject[$getObject[$get[c7]]]]]
+                $if[$sum[$get[dealval];$getObject[$getObject[$get[c7]]]]<18]
+                    $wait[2s]
+                    $sendMessage[The dealer hits emself and draws: $getObject[$get[c8]]]
+                    $if[$sum[$get[dealval];$getObject[$getObject[$get[c8]]]]>21]
+                        $let[dealval;$sum[$get[dealval];$getObject[$getObject[$get[c8]]];-11]]
+                        $wait[2s]
+                        $sendMessage[The dealer hits emself and draws: $objectGet[$get[c9]]]
+                        
 
 
 
