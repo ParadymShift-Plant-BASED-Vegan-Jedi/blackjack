@@ -1,127 +1,22 @@
 $onlyIf[$isNumber[$message[2]]==true;Please provide a wager like this !bj `100`]
 $initVar[user;curbal;0]
 $onlyIf[$sum[-$message[2];$getUserVar[curbal]]>-1;You dont seem to have enough cave coins for this wager, sorry! Check your balance with !pouch]
-$initVar[server;unshuffled_deck;1h#SEMI#2h#SEMI#3h#SEMI#4h#SEMI#5h#SEMI#6h#SEMI#7h#SEMI#8h#SEMI#9h#SEMI#10h#SEMI#11h#SEMI#12h#SEMI#13h#SEMI#1s#SEMI#2s#SEMI#3s#SEMI#4s#SEMI#5s#SEMI#6s#SEMI#7s#SEMI#8s#SEMI#9s#SEMI#10s#SEMI#11s#SEMI#12s#SEMI#13s#SEMI#1c#SEMI#2c#SEMI#3c#SEMI#4c#SEMI#5c#SEMI#6c#SEMI#7c#SEMI#8c#SEMI#9c#SEMI#10c#SEMI#11c#SEMI#12c#SEMI#13c#SEMI#1d#SEMI#2d#SEMI#3d#SEMI#4d#SEMI#5d#SEMI#6d#SEMI#7d#SEMI#8d#SEMI#9d#SEMI#10d#SEMI#11d#SEMI#12d#SEMI#13d]
-$textSplit[$getServerVar[unshuffled_deck];#SEMI#]
-$let[c1;$arrayGet[$random[1;52]]]
-$arrayRemove[$random[1;52]]
-$let[c2;$arrayGet[$random[1;51]]]
-$arrayRemove[$random[1;51]]
-$let[c3;$arrayGet[$random[1;50]]]
-$arrayRemove[$random[1;50]]
-$let[c4;$arrayGet[$random[1;49]]]
-$arrayRemove[$random[1;49]]
-$let[c5;$arrayGet[$random[1;48]]]
-$arrayRemove[$random[1;48]]
-$let[c6;$arrayGet[$random[1;47]]]
-$arrayRemove[$random[1;47]]
-$let[c7;$arrayGet[$random[1;46]]]
-$arrayRemove[$random[1;46]]
-$let[c8;$arrayGet[$random[1;45]]]
-$arrayRemove[$random[1;45]]
-$let[c9;$arrayGet[$random[1;44]]]
-$arrayRemove[$random[1;44]]
-$let[c10;$arrayGet[$random[1;43]]]
-$arrayRemove[$random[1;43]]
-$let[c11;$arrayGet[$random[1;42]]]
-$arrayRemove[$random[1;42]]
-$let[c12;$arrayGet[$random[1;41]]]
-$arrayRemove[$random[1;41]]
-$let[c13;$arrayGet[$random[1;40]]]
-$arrayRemove[$random[1;40]]
-$let[c14;$arrayGet[$random[1;39]]]
-$arrayRemove[$random[1;39]]
-$let[c15;$arrayGet[$random[1;38]]]
-$arrayRemove[$random[1;38]]
-$let[c16;$arrayGet[$random[1;37]]]
-$arrayRemove[$random[1;37]]
-$let[c17;$arrayGet[$random[1;36]]]
-$arrayRemove[$random[1;36]]
-$let[c18;$arrayGet[$random[1;35]]]
-$arrayRemove[$random[1;35]]
-$let[c19;$arrayGet[$random[1;34]]]
-$arrayRemove[$random[1;34]]
-$let[c20;$arrayGet[$random[1;33]]]
-$arrayRemove[$random[1;33]]
-$let[c21;$arrayGet[$random[1;32]]]
-$arrayRemove[$random[1;32]]
-$let[c22;$arrayGet[$random[1;31]]]
-$arrayRemove[$random[1;31]]
-$let[c23;$arrayGet[$random[1;30]]]
-$arrayRemove[$random[1;30]]
-$let[c24;$arrayGet[$random[1;29]]]
-$arrayRemove[$random[1;29]]
-$let[c25;$arrayGet[$random[1;28]]]
-$arrayRemove[$random[1;28]]
-$let[c26;$arrayGet[$random[1;27]]]
-$arrayRemove[$random[1;27]]
-$let[c27;$arrayGet[$random[1;26]]]
-$arrayRemove[$random[1;26]]
-$let[c28;$arrayGet[$random[1;25]]]
-$arrayRemove[$random[1;25]]
-$let[c29;$arrayGet[$random[1;24]]]
-$arrayRemove[$random[1;24]]
-$let[c30;$arrayGet[$random[1;23]]]
-$arrayRemove[$random[1;23]]
-$let[c31;$arrayGet[$random[1;22]]]
-$arrayRemove[$random[1;22]]
-$let[c32;$arrayGet[$random[1;21]]]
-$arrayRemove[$random[1;21]]
-$let[c33;$arrayGet[$random[1;20]]]
-$arrayRemove[$random[1;20]]
-$let[c34;$arrayGet[$random[1;19]]]
-$arrayRemove[$random[1;19]]
-$let[c35;$arrayGet[$random[1;18]]]
-$arrayRemove[$random[1;18]]
-$let[c36;$arrayGet[$random[1;17]]]
-$arrayRemove[$random[1;17]]
-$let[c37;$arrayGet[$random[1;16]]]
-$arrayRemove[$random[1;16]]
-$let[c38;$arrayGet[$random[1;15]]]
-$arrayRemove[$random[1;15]]
-$let[c39;$arrayGet[$random[1;14]]]
-$arrayRemove[$random[1;14]]
-$let[c40;$arrayGet[$random[1;13]]]
-$arrayRemove[$random[1;13]]
-$let[c41;$arrayGet[$random[1;12]]]
-$arrayRemove[$random[1;12]]
-$let[c42;$arrayGet[$random[1;11]]]
-$arrayRemove[$random[1;11]]
-$let[c43;$arrayGet[$random[1;10]]]
-$arrayRemove[$random[1;10]]
-$let[c44;$arrayGet[$random[1;9]]]
-$arrayRemove[$random[1;9]]
-$let[c45;$arrayGet[$random[1;8]]]
-$arrayRemove[$random[1;8]]
-$let[c46;$arrayGet[$random[1;7]]]
-$arrayRemove[$random[1;7]]
-$let[c47;$arrayGet[$random[1;6]]]
-$arrayRemove[$random[1;6]]
-$let[c48;$arrayGet[$random[1;5]]]
-$arrayRemove[$random[1;5]]
-$let[c49;$arrayGet[$random[1;4]]]
-$arrayRemove[$random[1;4]]
-$let[c50;$arrayGet[$random[1;3]]]
-$arrayRemove[$random[1;3]]
-$let[c51;$arrayGet[$random[1;2]]]
-$arrayRemove[$random[1;2]]
-$let[c52;$arrayGet[1]]
-$setUserVar[shufldeck;$get[c1] $get[c2] $get[c3] $get[c4] $get[c5] $get[c6] $get[c7] $get[c8] $get[c9] $get[c10] $get[c11] $get[c12] $get[c13] $get[c14] $get[c15] $get[c16] $get[c18] $get[c19] $get[c20] $get[c21] $get[c22] $get[c23] $get[c24] $get[c25] $get[c26] $get[c27] $get[c28] $get[c29] $get[c30] $get[c31] $get[c32] $get[c33] $get[c34] $get[c35] $get[c36] $get[c37] $get[c38] $get[c39] $get[c40] $get[c41] $get[c42] $get[c43] $get[c44] $get[c45] $get[c46] $get[c47] $get[c48] $get[c49] $get[c50] $get[c51] $get[c52]]
+$objectCreate[$jsonRequest[https://deckofcardsapi.com/api/deck/new/shuffle/?deck_count=1]]
 $objectCreate[
 {
-"1c":"Ace of Clubs",
-"2c":"2 of Clubs",
-"3c":"3 of Clubs",
-"4c":"4 of Clubs",
-"5c":"5 of Clubs",
-"6c":"6 of Clubs",
-"7c":"7 of Clubs",
-"8c":"8 of Clubs",
-"9c":"9 of Clubs",
-"10c":"10 of Clubs",
-"11c":"Jack of Clubs",
-"12c":"Queen of Clubs",
-"13c":"King of Clubs",
+"AC":"Ace of Clubs",
+"2C":"2 of Clubs",
+"3C":"3 of Clubs",
+"4C":"4 of Clubs",
+"5C":"5 of Clubs",
+"6C":"6 of Clubs",
+"7C":"7 of Clubs",
+"8C":"8 of Clubs",
+"9C":"9 of Clubs",
+"10C":"10 of Clubs",
+"JC":"Jack of Clubs",
+"QC":"Queen of Clubs",
+"KC":"King of Clubs",
 "1d":"Ace of Diamonds",
 "2d":"2 of Diamonds",
 "3d":"3 of Diamonds",
