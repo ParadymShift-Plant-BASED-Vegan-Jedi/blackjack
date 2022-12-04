@@ -212,73 +212,195 @@ $objectCreate[
 "10 of Hearts":"10",
 "Jack of Hearts":"10",
 "Queen of Hearts":"10",
-"King of Hearts":"10"
+"King of Hearts":"10",
+"1ci":"https://deckofcardsapi.com/static/img/AC.png",
+"2ci":"https://deckofcardsapi.com/static/img/2C.png",
+"3ci":"https://deckofcardsapi.com/static/img/3C.png",
+"4ci":"https://deckofcardsapi.com/static/img/4C.png",
+"5ci":"https://deckofcardsapi.com/static/img/5C.png",
+"6ci":"https://deckofcardsapi.com/static/img/6C.png",
+"7ci":"https://deckofcardsapi.com/static/img/7C.png",
+"8ci":"https://deckofcardsapi.com/static/img/8C.png",
+"9ci":"https://deckofcardsapi.com/static/img/9C.png",
+"10ci":"https://deckofcardsapi.com/static/img/0C.png",
+"11ci":"https://deckofcardsapi.com/static/img/JC.png",
+"12ci":"https://deckofcardsapi.com/static/img/QC.png",
+"13ci":"https://deckofcardsapi.com/static/img/KC.png",
+"1di":"https://deckofcardsapi.com/static/img/AD.png",
+"2di":"https://deckofcardsapi.com/static/img/2D.png",
+"3di":"https://deckofcardsapi.com/static/img/3D.png",
+"4di":"https://deckofcardsapi.com/static/img/4D.png",
+"5di":"https://deckofcardsapi.com/static/img/5D.png",
+"6di":"https://deckofcardsapi.com/static/img/6D.png",
+"7di":"https://deckofcardsapi.com/static/img/7D.png",
+"8di":"https://deckofcardsapi.com/static/img/8D.png",
+"9di":"https://deckofcardsapi.com/static/img/9D.png",
+"10di":"https://deckofcardsapi.com/static/img/0D.png",
+"11di":"https://deckofcardsapi.com/static/img/JD.png",
+"12di":"https://deckofcardsapi.com/static/img/QD.png",
+"13di":"https://deckofcardsapi.com/static/img/KD.png",
+"1si":"https://deckofcardsapi.com/static/img/AS.png",
+"2si":"https://deckofcardsapi.com/static/img/2S.png",
+"3si":"https://deckofcardsapi.com/static/img/3S.png",
+"4si":"https://deckofcardsapi.com/static/img/4S.png",
+"5si":"https://deckofcardsapi.com/static/img/5S.png",
+"6si":"https://deckofcardsapi.com/static/img/6S.png",
+"7si":"https://deckofcardsapi.com/static/img/7S.png",
+"8si":"https://deckofcardsapi.com/static/img/8S.png",
+"9si":"https://deckofcardsapi.com/static/img/9S.png",
+"10si":"https://deckofcardsapi.com/static/img/0S.png",
+"11si":"https://deckofcardsapi.com/static/img/JS.png",
+"12si":"https://deckofcardsapi.com/static/img/QS.png",
+"13si":"https://deckofcardsapi.com/static/img/KS.png",
+"1hi":"https://deckofcardsapi.com/static/img/AH.png",
+"2hi":"https://deckofcardsapi.com/static/img/2H.png",
+"3hi":"https://deckofcardsapi.com/static/img/3H.png",
+"4hi":"https://deckofcardsapi.com/static/img/4H.png",
+"5hi":"https://deckofcardsapi.com/static/img/5H.png",
+"6hi":"https://deckofcardsapi.com/static/img/6H.png",
+"7hi":"https://deckofcardsapi.com/static/img/7H.png",
+"8hi":"https://deckofcardsapi.com/static/img/8H.png",
+"9hi":"https://deckofcardsapi.com/static/img/9H.png",
+"10hi":"https://deckofcardsapi.com/static/img/0H.png",
+"11hi":"https://deckofcardsapi.com/static/img/JH.png",
+"12hi":"https://deckofcardsapi.com/static/img/QH.png",
+"13hi":"https://deckofcardsapi.com/static/img/KH.png",
+"fd":"https://i.imgur.com/hti2YVp.png",
+"1cs":"1",
+"2cs":"2",
+"3cs":"3",
+"4cs":"4",
+"5cs":"5",
+"6cs":"6",
+"7cs":"7",
+"8cs":"8",
+"9cs":"9",
+"10cs":"10",
+"11cs":"11",
+"12cs":"12",
+"13cs":"13",
+"1ds":"1",
+"2ds":"2",
+"3ds":"3",
+"4ds":"4",
+"5ds":"5",
+"6ds":"6",
+"7ds":"7",
+"8ds":"8",
+"9ds":"9",
+"10ds":"10",
+"11ds":"11",
+"12ds":"12",
+"13ds":"13",
+"1ss":"1",
+"2ss":"2",
+"3ss":"3",
+"4ss":"4",
+"5ss":"5",
+"6ss":"6",
+"7ss":"7",
+"8ss":"8",
+"9ss":"9",
+"10ss":"10",
+"11ss":"11",
+"12ss":"12",
+"13ss":"13",
+"1hs":"1",
+"2hs":"2",
+"3hs":"3",
+"4hs":"4",
+"5hs":"5",
+"6hs":"6",
+"7hs":"7",
+"8hs":"8",
+"9hs":"9",
+"10hs":"10",
+"11hs":"11",
+"12hs":"12",
+"13hs":"13"
 }
 ]
-$sendMessage[You wager :coin: $message[2] cave coins and the dealer deals you: $objectGet[$get[c1]] and deals emself: $objectGet[$get[c2]].]
-$wait[4s]
-$sendMessage[Next, the dealer deals you: $objectGet[$get[c3]] and deals emself: a card face down.]
+$sendMessage[You wager :coin: $message[2] cave coins and the dealer deals you: $objectGet[$get[c1]].]
+$sendMessage[$objectGet[$get[c1]i]]
+$wait[2s]
+$sendMessage[Next, the dealer deals emself: $objectGet[$get[c2]].]
+$sendMessage[$objectGet[$objectGet[$get[c2]]i]]
+$wait[2s]
+$sendMessage[Next, the dealer deals you: $objectGet[$get[c3]].]
+$sendMessage[$objectGet[$get[c3]i]]
+$wait[2s]
+$sendMessage[Finally, the dealer deals emself: a card face down.]
+$sendMessage[$objectGet[fd]]
+$wait[2s]
 $if[$objectGet[$objectGet[$get[c1]]]==1||$objectGet[$objectGet[$get[c3]]]==1] /* ACE detected, possible natural */
-    $if[$objectGet[$objectGet[$get[c1]]]==10||$objectGet[$objectGet[$get[c3]]]==10]
-        /* natural confirmed */
-        $sendMessage[The dealer flips over eir face down card and reveals: $objectGet[$get[c4]]
+    $if[$objectGet[$objectGet[$get[c1]]]==10||$objectGet[$objectGet[$get[c3]]]==10] /* natural confirmed */
+        $sendMessage[The dealer flips over eir face down card and reveals: $objectGet[$get[c4]].]
+        $sendMessage[$objectGet[$get[c4]i]]
         $if[$objectGet[$objectGet[$get[c2]]]==1||$objectGet[$objectGet[$get[c4]]]==1]
             $if[$objectGet[$objectGet[$get[c2]]]==10||$objectGet[$objectGet[$get[c4]]]==10]
                 $stop[You break even. Thanks for playing!]
                 $else
                 $let[winnings;$multi[$message[2];1.5]]
                 $setUserVar[curbal;$sum[$getUserVar[curbal];$get[winnings]]]
-                $stop[Congratulations! You won your original bet back with a natural for a 1.5x bonus :). Play again to win some more!]
+                $stop[Congratulations! You won with a natural and got paid 3 to 2 :). Play again to win some more!]
             $endIf
         $endIf
     $endIf
 $endIf
-$if[$objectGet[$objectGet[$get[c1]]]==$objectGet[$objectGet[$get[c3]]]]
-    $let[b1c;$awaitButton[Will you hit, split, or stay?{button:Hit:GREEN::hit}{button:Split:RED::split}{button:Stay:BLUE::stay};;60s;hit;split;stay]]
-    $if[$get[b1c]==split]
+$if[$objectGet[$get[c1]s]==$objectGet[$get[c3]s]] /* split detected */
+    $let[b1c;$awaitButton[Will you hit, split, stay, or double down?{button:Hit:GREEN::hit}{button:Split:RED::split}{button:Stay:BLUE::stay}{button:Double Down:RED::ddown};;60s;hit;split;stay;ddown]]
+    $if[$get[b1c]==split] /* split branch */
         $let[playval1;$objectGet[$objectGet[$get[c1]]]]
         $let[playval2;$objectGet[$objectGet[$get[c3]]]]
-        $let[b1c;$awaitButton[You split your hand and put down another :coin: $message[2] cave coins. Will you hit your first hand ($objectGet[$get[c1]]), hit your second hand ($objectGet[$get[c3]]), or stay?{button:Hit First:GREEN::hit1}{button:Hit Second:BLUE::hit2}{button:Stay:RED::stay};;60s;hit1;hit2;stay]]
-        $if[$get[b1c]==stay]
+        $let[b1c;$awaitButton[You split your hand and put down another wager of :coin: $message[2] cave coins. Will you hit your first hand ($objectGet[$get[c1]]), hit your second hand ($objectGet[$get[c3]]), or stay?{button:Hit First:GREEN::hit1}{button:Hit Second:BLUE::hit2}{button:Stay:RED::stay};;60s;hit1;hit2;stay]]
+        $if[$get[b1c]==stay] /* stay branch */
             $sendMessage[The dealer flips over eir face down card and reveals: $objectGet[$get[c4]]]
-            $if[$objectGet[$objectGet[$get[c2]]]==1&&$objectGet[$objectGet[$get[c4]]]==1]
+            $sendMessage[$objectGet[$get[c4]i]]
+            $wait[2s]
+            $if[$objectGet[$objectGet[$get[c2]]]==1&&$objectGet[$objectGet[$get[c4]]]==1] /* dealer aces detected */
                 $let[dealval;12]
-                $wait[2s]
                 $sendMessage[The dealer hits emself and draws: $objectGet[$get[c5]]]
+                $sendMessage[$objectGet[$get[c5]i]]
                 $wait[2s]
-                $if[$objectGet[$objectGet[$get[c5]]]==1]
+                $if[$objectGet[$objectGet[$get[c5]]]==1] /* dealer draws another ace */
                     $let[dealval;13]
                     $sendMessage[The dealer hits emself and draws: $objectGet[$get[c6]]]
+                    $sendMessage[$objectGet[$get[c6]i]]
                     $wait[2s]
-                    $if[$objectGet[$objectGet[$get[c6]]]==1]
+                    $if[$objectGet[$objectGet[$get[c6]]]==1] /* dealer draws fourth ace */
                         $let[dealval;14]
                         $sendMessage[The dealer hits emself and draws: $objectGet[$get[c7]]]
+                        $sendMessage[$objectGet[$get[c7]i]]
                         $wait[2s]
-                        $if[$sum[$get[dealval];$objectGet[$objectGet[$get[c7]]]]<18]
+                        $if[$sum[$get[dealval];$objectGet[$objectGet[$get[c7]]]]<18] /* dealer soft 17 or lower detected, card could be a 2 val card */
                             $let[dealval;$sum[$get[dealval];$objectGet[$objectGet[$get[c7]]]]]
                             $sendMessage[The dealer hits emself and draws: $objectGet[$get[c8]]]
+                            $sendMessage[$objectGet[$get[c8]i]]
                             $wait[2s]
-                            $if[$sum[$get[dealval];$objectGet[$objectGet[$get[c8]]]]>21]
+                            $if[$sum[$get[dealval];$objectGet[$objectGet[$get[c8]]]]>21] /* dealer goes over 21 on soft aces, replacing 11 val ace with 1 val ace */
                                 $let[dealval;$sum[$get[dealval];$objectGet[$objectGet[$get[c8]]];-10]]
                                 $sendMessage[The dealer hits emself and draws: $objectGet[$get[c9]]]
+                                $sendMessage[$objectGet[$get[c9]i]]
                                 $wait[2s]
-                                $if[$sum[$get[dealval];$objectGet[$objectGet[$get[c9]]]]<17]
+                                $if[$sum[$get[dealval];$objectGet[$objectGet[$get[c9]]]]<17] /* dealer hard 16 or lower detected, card could be a 2 val card */
                                     $let[dealval;$sum[$get[dealval];$objectGet[$objectGet[$get[c9]]]]]
                                     $sendMessage[The dealer hits emself and draws: $objectget[$get[c10]]]
+                                    $sendMessage[$objectGet[$get[c10]i]]
                                     $wait[2s]
-                                    $if[$sum[$get[dealval];$objectGet[$objectGet[$get[c10]]]]<17]
+                                    $if[$sum[$get[dealval];$objectGet[$objectGet[$get[c10]]]]<17] /* dealer hard 16 or lower detected, card could be a 2 val card */
                                         $let[dealval;$sum[$get[dealval];$objectGet[$objectGet[$get[c10]]]]]
                                         $sendMessage[The dealer hits emself and draws: $objectGet[$get[c11]]]
+                                        $sendMessage[$objectGet[$get[c11]i]]
                                         $wait[2s]
-                                        $if[$sum[$get[dealval];$objectGet[$objectGet[$get[c11]]]]>21]
-                                            $sendMessage[The dealer busts. Congratulations! You won your original bet back plus 100% of your bet (: Play again to win some more!]
+                                        $if[$sum[$get[dealval];$objectGet[$objectGet[$get[c11]]]]>21] /* the dealer busts */
                                             $setUserVar[curbal;$sum[$getUserVar[curbal];$message[2]]]
-                                            $stop
-                                            $elseIf[$sum[$get[dealval];$objectGet[$objectGet[$get[c11]]]]<22]
-                                                $if[$get[playval1]>$get[dealval]&&$get[$get[playval2]>$get[dealval]]
-                                                    $sendMessage[Congratulations! You won on both hands, winning your original bets back plus 100% of your bets (: Play again to win some more!]
+                                            $stop[The dealer busts. Congratulations! You won and got paid 2 to 1 (: Play again to win some more!]
+                                            $elseIf[$sum[$get[dealval];$objectGet[$objectGet[$get[c11]]]]<22] /* hard 17 or higher detected, the dealer stays */
+                                                $if[$get[playval1]>$get[dealval]&&$get[playval2]>$get[dealval]]
                                                     $setUserVar[curbal;$sum[$getUserVar[curbal];$message[2];$message[2]]]
-                                                    
+                                                    $stop[Congratulations! You won on both hands and got paid 2 to 1 (: Play again to win some more!]
+                                                    $elseIf[$get[playval1]<$get[dealval]]
+                                                        $sendMessage[
 $let[b1c;$awaitButton[Will you hit or stay?{button:Hit:GREEN::hit}{button:Stay:BLUE::stay};;60s;hit;stay]]
 $if[$get[b1c]==stay]
     $sendMessage[The dealer flips over eir face down card and reveals: $objectGet[$get[c4]]
